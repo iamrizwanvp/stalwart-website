@@ -1,0 +1,637 @@
+
+/* General Styles */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Header styles */
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between logo and nav */
+    border-bottom: 2px solid #444;
+}
+
+header .logo {
+    margin-right: auto; /* Pushes the logo to the right */
+}
+
+.logo img {
+    height: 150px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.submenu-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.submenu:hover .submenu-content {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .submenu-content {
+        left: 100%; /* Ensure submenu aligns to the right of the parent */
+    }
+}
+
+@media (max-width: 768px) {
+    .submenu-content {
+        position: absolute;
+        top: 0;
+        left: auto; /* Change to ensure it shows to the right of the parent on small screens */
+        right: 0; /* Ensure it doesn't overflow */
+    }
+}
+
+
+/* background sliders code */
+
+
+.background-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.content {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.company-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.company-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+form {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.company-details {
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+.company-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.company-details ul li {
+    margin-bottom: 10px;
+}
+
+.company-details ul li strong {
+    font-weight: bold;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-details p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .slide .content {
+        padding: 10px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .company-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-container {
+        padding: 10px;
+    }
+
+} 
+.equipment-section {
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+}
+
+.equipment-content h1 {
+    color: red;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.equipment-content ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.equipment-content ul li {
+    margin-bottom: 30px; /* Added 3 spaces (30px) between list items */
+}
+
+.quote-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .equipment-section {
+        padding: 20px;
+    }
+
+    .equipment-content h1 {
+        font-size: 2em;
+    }
+
+    .quote-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+.quote-main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.company-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.company-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.quote-heading {
+    text-align: left;
+    color: red;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.quote-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.quote-form input, .quote-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.quote-form textarea {
+    resize: vertical;
+}
+
+.quote-form button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .company-image {
+        margin-bottom: 20px;
+    }
+
+    .quote-main {
+        padding: 10px;
+    }
+
+    .quote-form button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+clients page design area 
+
+.clients-main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.clients-heading {
+    color: red;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min-width for larger images */
+    gap: 20px;
+    justify-content: center;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f1f1f1; /* Optional: Add a background color */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Shadow for better visibility */
+}
+
+.client-logo img {
+    max-width: 100%; /* Ensure image fits within container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .clients-heading {
+        font-size: 2em;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .client-logo img {
+        max-width: 100%; /* Ensure responsiveness on smaller screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .clients-heading {
+        font-size: 2em;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f1f1f1; /* Light grey background color */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-underline {
+    border: 0;
+    border-top: 1px solid #ccc; /* Grey line */
+    margin: 0 0 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px; /* Adjust font size as needed */
+    color: #333; /* Dark grey text color */
+}
+
+@media (max-width: 768px) {
+    .footer-content p {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+}
+
+
+/* tadano page styles */
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.crane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.crane img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.crane-details {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.crane-details h2 {
+  margin-bottom: 10px;
+}
+
+.crane-details p {
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: gray;
+}

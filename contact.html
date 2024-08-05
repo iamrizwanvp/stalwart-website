@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Company Land Vehicles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="/images/Stalwarts_Logo_5.5K_PX-removebg-preview.png" alt="Company Logo">
+        </a>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="clients.html">Our Clients</a></li>
+                <li><a href="request-quote.html">Request a Quote</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Plant Listing</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Toolcarrier</a></li>
+                        <li class="submenu">
+                            <a href="#">Crane</a>
+                            <ul class="submenu-content">
+                                <li><a href="tadano.html">Tadano</a></li>
+                                <!-- Add more models here -->
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#">Boomloader</a>
+                            <ul class="submenu-content">
+                                <li><a href="jcb.html">JCB</a></li>
+                                <!-- Add more models here if needed -->
+                            </ul>
+                        </li>
+                        <li><a href="#">Forklift</a></li>
+                        <li><a href="#">Wheelloader</a></li>
+                        <li><a href="#">Shovel</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <div class="contact-container">
+            <div class="company-image">
+                <img src="/images/Stalwarts_Logo_5.5K_PX-removebg-preview.png" alt="Company Image">
+            </div>
+            <form action="send_form_email.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="company">Company Name (optional):</label>
+                <input type="text" id="company" name="company">
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <hr class="footer-underline">
+        <div class="footer-content">
+            <p>P.O Box 657, PC 121, Bosher 40 - South Al Khuwair, Block Name 235, Plot 95, BN 327, Muscat, Sultanate of Oman</p>
+            <p>Tel: (+968) 91499971</p>
+            <p>Fax: (+968) 24508140</p>
+            <p>CR.1421074</p>
+        </div>
+    </footer>
+    <script src="slider.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
